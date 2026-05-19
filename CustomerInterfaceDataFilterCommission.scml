@@ -31,7 +31,7 @@ namespace: com.fja.ipl.customer.lc.sc
 	
 	customizedTypeFilter: FilterCommissionVb {
 		includes:
-		c_pbSumOffenLetzteWik, c_kofakAlpha; 
+		c_pbSumOffenLetzteWik, c_kofakAlpha, c_zbalt; 
 	}
 	
 	// VIG-9777
