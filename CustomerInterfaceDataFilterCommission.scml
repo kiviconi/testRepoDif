@@ -1,0 +1,54 @@
+"Define a customer data filter for Commission"
+customerFilterSpec: CustomizedInterfaceDataFilterCommission
+for: InterfaceDataFilterCommissionDef
+dependsOn: CustomerLifeUtil
+namespace: com.fja.ipl.customer.lc.sc
+	filteredComponent: CustomerLifeBom
+	artefacts: dataClass&, merger&, factory&, metaInfo&;
+  { 
+	customizedTypeFilter: FilterCommissionJurLV{ 
+		includes: c_kzGrosskundenNr;
+	} 
+	
+	customizedTypeFilter: FilterCommissionLv{
+		includes: c_kzAktion, steuLandPrimaer, steuLandSekundaer;
+	}
+	
+	customizedTypeFilter: FilterCommissionVt{
+		includes: abschlkoVar, c_vorgKofakAlpha, FVerm, c_habl, c_shiftkost, c_shiftBetrag, c_habl_init;
+		// additional attributes
+		risArt : String;
+	}
+	
+	customizedTypeFilter: FilterCommissionPartnerLV {
+		includes: c_anschriftIDExt; 
+	}
+	
+	 
+	customizedTypeFilter: FilterCommissionHvGruppe {
+		includes: c_kofakAlpha,c_aktionsTyp, c_kofakBPK;
+	}
+	
+	customizedTypeFilter: FilterCommissionVb {
+		includes:
+		c_pbSumOffenLetzteWik, c_kofakAlpha; 
+	}
+	
+	// VIG-9777
+	customizedFilter: FilterCommissionKtoBwg {
+		includes:
+			ktoBwgExt;
+	}
+	
+	// VIG-9777
+	filter: FilterCommissionKtoBwgExt on: KtoBwgExt {
+		includes:
+			c_aktionsTyp;
+	}
+	
+	customizedTypeFilter: FilterCommissionAnreWerte{
+		includes:
+		vorVtrnr, c_kapitalVerlaengerung, tbAnrWert;
+	}
+
+}
