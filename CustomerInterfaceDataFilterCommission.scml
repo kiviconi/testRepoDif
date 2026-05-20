@@ -11,7 +11,7 @@ namespace: com.fja.ipl.customer.lc.sc
 	} 
 	
 	customizedTypeFilter: FilterCommissionLv{
-		includes: c_kzAktion, steuLandPrimaer, steuLandSekundaer;
+		includes: c_kzAktion, steuLandPrimaer, steuLandSekundaer, c_top;
 	}
 	
 	customizedTypeFilter: FilterCommissionVt{
